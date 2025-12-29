@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services - WRED Software Solutions</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+    --primary: #0a3d62;
+    --secondary: #1e3799;
+    --accent: #feca57;
+    --light: #f4f6f9;
+    --dark: #222f3e;
+    --text: #555;
+    --success: #2ecc71;
+    --shadow: 0 5px 15px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
+
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--light);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+h1, h2, h3, h4 {
+    color: var(--dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background: var(--accent);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 60px;
+    max-width: 700px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 61, 98, 0.95);
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+nav.scrolled {
+    padding: 15px 0;
+    background-color: var(--primary);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.nav-links a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ===== SERVICES HERO ===== */
+.services-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 180px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.services-hero h1 {
+    color: white;
+    font-size: 3.8rem;
+    margin-bottom: 25px;
+    animation: fadeInUp 1s ease;
+}
+
+.services-hero p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.breadcrumb a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.breadcrumb span {
+    margin: 0 10px;
+    color: rgba(255,255,255,0.5);
+}
+
+.breadcrumb .current {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.hero-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    top: -200px;
+    right: -100px;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    right: 20%;
+}
+
+/* ===== SERVICES OVERVIEW ===== */
+.services-overview {
+    background-color: white;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.overview-text h2 {
+    margin-bottom: 25px;
+}
+
+.service-features {
+    margin-top: 30px;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.feature i {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.overview-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 400px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.overview-image:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+/* ===== ALL SERVICES ===== */
+.all-services {
+    background-color: var(--light);
+}
+
+#services h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.service-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--accent);
+    z-index: 2;
+}
+
+.service-header {
+    padding: 40px 30px 30px;
+    position: relative;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(254, 202, 87, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.service-icon i {
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.service-details {
+    padding: 0 30px 30px;
+}
+
+.service-feature-list {
+    margin-top: 20px;
+}
+
+.service-feature-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-feature-list i {
+    color: var(--accent);
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.service-footer {
+    padding: 20px 30px;
+    background-color: var(--light);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.service-price span {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: normal;
+}
+
+.btn-service {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-service:hover {
+    background-color: var(--secondary);
+}
+
+/* ===== OUR PROCESS ===== */
+.our-process {
+    background-color: white;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    position: relative;
+}
+
+.process-steps:before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: var(--accent);
+    z-index: 1;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    width: 20%;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 auto 25px;
+    position: relative;
+    border: 5px solid white;
+}
+
+.process-step h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* ===== INDUSTRIES ===== */
+.industries {
+    background-color: var(--light);
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.industry-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    border-top: 5px solid transparent;
+}
+
+.industry-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-top-color: var(--accent);
+}
+
+.industry-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(10, 61, 98, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.industry-icon i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.industry-card h4 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta-section h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cta-section h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+}
+
+.cta-section p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    background-color: white;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 50px auto 0;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: var(--light);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background-color: rgba(254, 202, 87, 0.1);
+}
+
+.faq-question i {
+    transition: var(--transition);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 70px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.footer-about p {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--accent);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-links h3:after, .footer-contact h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    opacity: 0.8;
+}
+
+.footer-contact i {
+    color: var(--accent);
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .overview-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .overview-image {
+        height: 300px;
+        order: -1;
+    }
+    
+    .process-steps {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .process-steps:before {
+        display: none;
+    }
+    
+    .process-step {
+        width: 45%;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: var(--transition);
+    }
+    
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+        width: 100%;
+    }
+    
+    .service-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    section {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+    <div class="container nav-container">
+        <a href="home.html" class="logo">
+            <i class="fas fa-laptop-code"></i> WRED
+        </a>
+        
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ===== SERVICES HERO ===== -->
+<section class="services-hero">
+    <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="home.html">Home</a>
+            <span>/</span>
+            <span class="current">Our Services</span>
+        </div>
+        
+        <div class="services-hero-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive software solutions tailored to your business needs. From web development to AI integration, we deliver cutting-edge technology that drives growth and innovation.</p>
+            <a href="#all-services" class="btn btn-primary">Explore Our Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES OVERVIEW ===== -->
+<section class="services-overview">
+    <div class="container">
+        <div class="overview-content">
+            <div class="overview-text">
+                <h2>End-to-End Technology Solutions</h2>
+                <p>At WRED, we provide comprehensive software development services that cover every stage of the digital transformation journey. Our team of experts combines technical excellence with industry insights to deliver solutions that solve real business challenges.</p>
+                <p>We work closely with our clients to understand their unique needs and develop customized solutions that align with their business objectives and drive measurable results.</p>
+                
+                <div class="service-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Custom Development</h3>
+                            <p>Tailored solutions designed specifically for your business requirements.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Scalable Architecture</h3>
+                            <p>Future-proof solutions that grow with your business.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Ongoing Support</h3>
+                            <p>Comprehensive maintenance and support to ensure optimal performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overview-image">
+                <div>Comprehensive Tech Solutions</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ALL SERVICES ===== -->
+<section id="all-services" class="all-services">
+    <div class="container text-center">
+        <h2>Our Service Offerings</h2>
+        <p class="section-subtitle">We offer a wide range of software development services designed to help your business thrive in the digital age.</p>
+        
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Custom Web Development</h3>
+                    <p>Build responsive, high-performance web applications tailored to your business needs.</p>
+                </div>
+                
+                <div class="service-details">
+                    <p>Our web development services include everything from simple business websites to complex web applications with advanced functionality.</p>
+                    
+                    <ul class="service-feature-list">
+                        <li><i class="fas fa-check"></i> Responsive & Mobile-First Design</li>
+                        <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+                        <li><i class="fas fa-check"></i> Content Management Systems</li>
+                        <li><i class="fas fa-check"></i> Progressive Web Apps</li>
+                        <li><i class="fas fa-check"></i> API Development & Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-footer">
+                    <div class="service-price">Starting at <span>$5,000</span></div>
+                    <a href="contact.html" class="btn-service">Get Quote</a>
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android devices.</p>
+                </div>
+                
+                <div class="service-details">
+                    <p>We create intuitive, feature-rich mobile applications that provide exceptional user experiences and drive engagement.</p>
+                    
+                    <ul class="service-feature-list">
+                        <li><i class="fas fa-check"></i> iOS & Android Native Apps</li>
+                        <li><i class="fas fa-check"></i> React Native & Flutter Development</li>
+                        <li><i class="fas fa-check"></i> Mobile UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> App Store Deployment</li>
+                        <li><i class="fas fa-check"></i> Ongoing Maintenance & Updates</li>
+                    </ul>
+                </div>
+                
+                <div class="service-footer">
+                    <div class="service-price">Starting at <span>$8,000</span></div>
+                    <a href="contact.html" class="btn-service">Get Quote</a>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Intelligent solutions powered by artificial intelligence and data analytics.</p>
+                </div>
+                
+                <div class="service-details">
+                    <p>Leverage the power of AI to automate processes, gain insights from data, and create intelligent applications.</p>
+                    
+                    <ul class="service-feature-list">
+                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                        <li><i class="fas fa-check"></i> Natural Language Processing</li>
+                        <li><i class="fas fa-check"></i> Computer Vision Solutions</li>
+                        <li><i class="fas fa-check"></i> Recommendation Systems</li>
+                        <li><i class="fas fa-check"></i> Chatbot Development</li>
+                    </ul>
+                </div>
+                
+                <div class="service-footer">
+                    <div class="service-price">Starting at <span>$12,000</span></div>
+                    <a href="contact.html" class="btn-service">Get Quote</a>
+                </div>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud infrastructure and migration services for modern businesses.</p>
+                </div>
+                
+                <div class="service-details">
+                    <p>Migrate to the cloud or optimize your existing cloud infrastructure for better performance, security, and cost-efficiency.</p>
+                    
+                    <ul class="service-feature-list">
+                        <li><i class="fas fa-check"></i> Cloud Migration</li>
+                        <li><i class="fas fa-check"></i> AWS, Azure & Google Cloud</li>
+                        <li><i class="fas fa-check"></i> DevOps & CI/CD Pipelines</li>
+                        <li><i class="fas fa-check"></i> Cloud Security & Compliance</li>
+                        <li><i class="fas fa-check"></i> Serverless Architecture</li>
+                    </ul>
+                </div>
+                
+                <div class="service-footer">
+                    <div class="service-price">Starting at <span>$6,000</span></div>
+                    <a href="contact.html" class="btn-service">Get Quote</a>
+                </div>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive security solutions to protect your digital assets and data.</p>
+                </div>
+                
+                <div class="service-details">
+                    <p>Protect your business from cyber threats with our comprehensive security assessment, implementation, and monitoring services.</p>
+                    
+                    <ul class="service-feature-list">
+                        <li><i class="fas fa-check"></i> Security Audits & Assessments</li>
+                        <li><i class="fas fa-check"></i> Penetration Testing</li>
+                        <li><i class="fas fa-check"></i> Data Encryption & Protection</li>
+                        <li><i class="fas fa-check"></i> Compliance Management</li>
+                        <li><i class="fas fa-check"></i> Security Monitoring & Incident Response</li>
+                    </ul>
+                </div>
+                
+                <div class="service-footer">
+                    <div class="service-price">Starting at <span>$4,000</span></div>
+                    <a href="contact.html" class="btn-service">Get Quote</a>
+                </div>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Transformation</h3>
+                    <p>Strategic consulting and implementation to modernize your business processes.</p>
+                </div>
+                
+                <div class="service-details">
+                    <p>Guide your organization through digital transformation with our strategic consulting and implementation services.</p>
+                    
+                    <ul class="service-feature-list">
+                        <li><i class="fas fa-check"></i> Digital Strategy Consulting</li>
+                        <li><i class="fas fa-check"></i> Process Automation</li>
+                        <li><i class="fas fa-check"></i> Legacy System Modernization</li>
+                        <li><i class="fas fa-check"></i> Technology Roadmapping</li>
+                        <li><i class="fas fa-check"></i> Change Management</li>
+                    </ul>
+                </div>
+                
+                <div class="service-footer">
+                    <div class="service-price">Contact for <span>Custom Pricing</span></div>
+                    <a href="contact.html" class="btn-service">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OUR PROCESS ===== -->
+<section class="our-process">
+    <div class="container text-center">
+        <h2>Our Development Process</h2>
+        <p class="section-subtitle">We follow a structured, agile approach to ensure project success and timely delivery.</p>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Discovery & Planning</h4>
+                <p>We analyze requirements, define objectives, and create a detailed project plan.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Design & Prototyping</h4>
+                <p>We create wireframes, mockups, and prototypes to visualize the solution.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Development</h4>
+                <p>Our team implements the solution using agile methodologies and best practices.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Testing & Quality</h4>
+                <p>We conduct rigorous testing to ensure quality, security, and performance.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h4>Deployment & Support</h4>
+                <p>We deploy the solution and provide ongoing maintenance and support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="industries">
+    <div class="container text-center">
+        <h2>Industries We Serve</h2>
+        <p class="section-subtitle">We have extensive experience delivering technology solutions across various industries.</p>
+        
+        <div class="industries-grid">
+            <div class="industry-card">
+                <div class="industry-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h4>Finance & Banking</h4>
+                <p>Secure fintech solutions, payment systems, and banking applications.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h4>Healthcare</h4>
+                <p>HIPAA-compliant systems, telehealth platforms, and medical software.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h4>E-commerce</h4>
+                <p>Online stores, marketplace platforms, and inventory management systems.</p>
+            </div>
+            
+            <div class="industry-card">
+                <div class="industry-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h4>Education</h4>
+                <p>Learning management systems, educational apps, and e-learning platforms.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ SECTION ===== -->
+<section class="faq-section">
+    <div class="container text-center">
+        <h2>Frequently Asked Questions</h2>
+        <p class="section-subtitle">Find answers to common questions about our services and process.</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is your typical project timeline?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Project timelines vary based on complexity and scope. A simple website may take 4-6 weeks, while a complex web application could take 3-6 months. We provide detailed timelines during the discovery phase and use agile methodologies to ensure timely delivery.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you provide ongoing maintenance and support?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer comprehensive maintenance and support packages that include regular updates, security patches, performance monitoring, and technical support. We believe in building long-term partnerships with our clients.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What technologies do you work with?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our team is proficient in a wide range of technologies including React, Angular, Vue.js, Node.js, Python, Java, .NET, iOS, Android, React Native, Flutter, AWS, Azure, Google Cloud, and various AI/ML frameworks. We choose the right technology stack for each project based on requirements.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do you ensure project quality?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We follow industry best practices, conduct code reviews, implement automated testing, and perform rigorous quality assurance at every stage. Our process includes unit testing, integration testing, security testing, and user acceptance testing before deployment.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can you work with our existing development team?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. We often collaborate with in-house teams, providing expertise in specific areas or augmenting existing teams with additional resources. We adapt our workflow to integrate seamlessly with your team and processes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Contact us today for a free consultation and let's discuss how we can help bring your ideas to life with cutting-edge technology solutions.</p>
+        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-laptop-code"></i> WRED
+                </div>
+                <p>WRED Software Solutions delivers innovative, secure, and scalable software products that help businesses thrive in the digital age.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Corporate Office: 9-A-23, Sector-2,
+Noida, Near Sector-16 Metro Station</p>
+                <p><i class="fas fa-phone-alt"></i> +91 7303490358</p>
+                <p><i class="fas fa-envelope"></i> info@WRED.com</p>
+                <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 WRED Software Solutions. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+/* ===== JS ===== */
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    if (navLinks.classList.contains('active')) {
+        menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
+
+// FAQ Accordion functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        faqItem.classList.toggle('active');
+        
+        // Close other FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Animate elements on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.querySelectorAll('.service-card, .industry-card, .process-step').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(element);
+});
+
+// Process steps animation
+const processSteps = document.querySelectorAll('.process-step');
+const processObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            processSteps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+    });
+}, { threshold: 0.3 });
+
+processObserver.observe(document.querySelector('.our-process'));
+
+// Service card hover enhancement
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.zIndex = '10';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.zIndex = '1';
+    });
+});
+</script>
+
+</body>
+</html>
