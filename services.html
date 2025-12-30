@@ -3,20 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Services - WRED Software Solutions</title>
+<meta name="description" content="Contact EquinoxSphere Digital Intelligence Labs for software development, AI solutions, and digital transformation services.">
+<meta name="keywords" content="contact software company, get in touch, consultation, tech support, enterprise solutions">
+<title>Contact Us | EquinoxSphere Digital Intelligence Labs</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== CSS Variables ===== */
 :root {
-    --primary: #0a3d62;
-    --secondary: #1e3799;
-    --accent: #feca57;
-    --light: #f4f6f9;
-    --dark: #222f3e;
-    --text: #555;
-    --success: #2ecc71;
-    --shadow: 0 5px 15px rgba(0,0,0,0.08);
-    --transition: all 0.3s ease;
+    --primary: #1a237e;
+    --primary-dark: #0d1454;
+    --secondary: #283593;
+    --accent: #4fc3f7;
+    --accent-dark: #039be5;
+    --light: #f8f9fa;
+    --dark: #121212;
+    --text: #424242;
+    --text-light: #757575;
+    --success: #00c853;
+    --error: #d32f2f;
+    --warning: #ff9800;
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 12px;
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
 }
 
 /* ===== GLOBAL ===== */
@@ -26,18 +40,23 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-    background-color: var(--light);
+html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 section {
@@ -45,19 +64,24 @@ section {
 }
 
 h1, h2, h3, h4 {
-    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     line-height: 1.2;
+    color: var(--dark);
 }
 
 h1 {
     font-size: 3.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 2.75rem;
+    margin-bottom: 20px;
     position: relative;
     display: inline-block;
 }
@@ -65,56 +89,47 @@ h2 {
 h2:after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 0;
-    width: 70px;
+    width: 80px;
     height: 4px;
-    background: var(--accent);
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
-    color: var(--text);
+    font-size: 1.125rem;
+    color: var(--text-light);
     margin-bottom: 60px;
     max-width: 700px;
+    line-height: 1.8;
 }
 
 .text-center {
     text-align: center;
 }
 
-.btn {
+.text-center h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-tag {
     display: inline-block;
-    padding: 15px 35px;
-    font-size: 1.1rem;
+    padding: 8px 20px;
+    background: rgba(79, 195, 247, 0.1);
+    color: var(--accent-dark);
+    border-radius: 50px;
+    font-size: 0.875rem;
     font-weight: 600;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--accent);
-    color: var(--dark);
-}
-
-.btn-primary:hover {
-    background-color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.btn-secondary {
-    background-color: var(--primary);
-    color: white;
-}
-
-.btn-secondary:hover {
-    background-color: var(--secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 /* ===== NAVBAR ===== */
@@ -122,16 +137,17 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(10, 61, 98, 0.95);
-    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 18px 0;
     z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
+    backdrop-filter: blur(10px);
 }
 
 nav.scrolled {
-    padding: 15px 0;
-    background-color: var(--primary);
+    padding: 14px 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .nav-container {
@@ -140,133 +156,193 @@ nav.scrolled {
     align-items: center;
 }
 
-.logo {
+.logo-container {
     display: flex;
     align-items: center;
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 700;
     text-decoration: none;
+    transition: var(--transition);
 }
 
-.logo i {
-    color: var(--accent);
-    margin-right: 10px;
+.logo-container:hover {
+    transform: scale(1.02);
+}
+
+.nav-logo {
+    height: 50px;
+    width: auto;
+    transition: var(--transition);
+}
+
+nav.scrolled .nav-logo {
+    height: 40px;
+}
+
+.logo-text {
+    margin-left: 12px;
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo-text span {
+    color: var(--accent-dark);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-}
-
-.nav-links li {
-    margin-left: 30px;
+    gap: 40px;
 }
 
 .nav-links a {
-    color: white;
+    color: var(--dark);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1rem;
     transition: var(--transition);
     position: relative;
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-.nav-links a.active {
-    color: var(--accent);
-}
-
-.nav-links a.active:after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--accent);
+    padding: 8px 0;
 }
 
 .nav-links a:after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
+    background: var(--gradient-accent);
     transition: var(--transition);
 }
 
-.nav-links a:hover:after {
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a:hover:after,
+.nav-links a.active:after {
     width: 100%;
 }
 
 .menu-toggle {
     display: none;
-    color: white;
+    background: none;
+    border: none;
+    color: var(--primary);
     font-size: 1.5rem;
     cursor: pointer;
+    transition: var(--transition);
 }
 
-/* ===== SERVICES HERO ===== */
-.services-hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: white;
+.menu-toggle:hover {
+    color: var(--accent-dark);
+}
+
+/* ===== CONTACT HERO ===== */
+.contact-hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     padding: 180px 0 100px;
     position: relative;
     overflow: hidden;
 }
 
-.services-hero-content {
-    max-width: 800px;
+.contact-hero-content {
+    max-width: 900px;
     position: relative;
     z-index: 2;
-}
-
-.services-hero h1 {
-    color: white;
-    font-size: 3.8rem;
-    margin-bottom: 25px;
-    animation: fadeInUp 1s ease;
-}
-
-.services-hero p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    max-width: 700px;
-    animation: fadeInUp 1s ease 0.2s both;
 }
 
 .breadcrumb {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    animation: fadeInUp 1s ease 0.4s both;
+    animation: fadeInDown 0.8s ease;
 }
 
 .breadcrumb a {
-    color: rgba(255,255,255,0.8);
+    color: var(--text-light);
     text-decoration: none;
     transition: var(--transition);
+    font-weight: 500;
 }
 
 .breadcrumb a:hover {
-    color: var(--accent);
+    color: var(--accent-dark);
 }
 
 .breadcrumb span {
-    margin: 0 10px;
-    color: rgba(255,255,255,0.5);
+    margin: 0 12px;
+    color: var(--text-light);
+    opacity: 0.5;
 }
 
 .breadcrumb .current {
-    color: var(--accent);
+    color: var(--accent-dark);
     font-weight: 600;
+}
+
+.contact-hero .section-tag {
+    animation: fadeInUp 0.8s ease;
+}
+
+.contact-hero h1 {
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.contact-hero-description {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    line-height: 1.8;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(26, 35, 126, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
 }
 
 .hero-shapes {
@@ -281,7 +357,7 @@ nav.scrolled {
 
 .shape {
     position: absolute;
-    background: rgba(255,255,255,0.05);
+    background: rgba(79, 195, 247, 0.1);
     border-radius: 50%;
 }
 
@@ -299,297 +375,426 @@ nav.scrolled {
     right: 20%;
 }
 
-/* ===== SERVICES OVERVIEW ===== */
-.services-overview {
+/* ===== CONTACT INFORMATION ===== */
+.contact-info-section {
     background-color: white;
 }
 
-.overview-content {
+.contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
-.overview-text h2 {
-    margin-bottom: 25px;
+.contact-method {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-.service-features {
-    margin-top: 30px;
+.contact-method:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+    border-color: var(--accent);
 }
 
-.feature {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 25px;
-}
-
-.feature i {
-    color: var(--accent);
-    font-size: 1.5rem;
-    margin-right: 15px;
-    margin-top: 5px;
-}
-
-.overview-image {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    height: 400px;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(79, 195, 247, 0.1);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.contact-icon i {
+    font-size: 2.5rem;
+    color: var(--accent-dark);
+}
+
+.contact-method h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.contact-detail {
+    margin-bottom: 10px;
+}
+
+.contact-action {
+    margin-top: 20px;
+}
+
+.contact-action a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.contact-action a:hover {
+    color: var(--accent-dark);
+}
+
+.contact-action a i {
+    margin-left: 8px;
+    transition: var(--transition);
+}
+
+.contact-action a:hover i {
+    transform: translateX(5px);
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.contact-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.form-side {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 50px;
+    box-shadow: var(--card-shadow);
+}
+
+.form-header {
+    margin-bottom: 40px;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.form-note {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+.form-group .required {
+    color: var(--error);
+}
+
+.form-control {
+    width: 100%;
+    padding: 18px 24px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: #f8f9fa;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(79, 195, 247, 0.1);
+}
+
+textarea.form-control {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-submit {
+    background: var(--gradient-primary);
     color: white;
-    font-size: 1.5rem;
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(26, 35, 126, 0.4);
+}
+
+.form-status {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.form-status.success {
+    background: rgba(0, 200, 83, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+    display: block;
+}
+
+.form-status.error {
+    background: rgba(211, 47, 47, 0.1);
+    color: var(--error);
+    border: 1px solid var(--error);
+    display: block;
+}
+
+/* Form Validation Styles */
+.error-message {
+    color: var(--error);
+    font-size: 0.875rem;
+    margin-top: 8px;
+    display: none;
+}
+
+.form-control.error {
+    border-color: var(--error);
+}
+
+.form-control.success {
+    border-color: var(--success);
+}
+
+/* ===== CONTACT SIDEBAR ===== */
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-hours {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--card-shadow);
+}
+
+.contact-hours h3 {
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+}
+
+.hours-list {
+    list-style: none;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.hours-list li:last-child {
+    border-bottom: none;
+}
+
+.hours-list .day {
+    font-weight: 600;
+}
+
+.hours-list .time {
+    color: var(--primary);
+}
+
+.social-contact {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1.25rem;
+}
+
+.social-icon:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ===== MAP SECTION ===== */
+.map-section {
+    background-color: white;
+    padding: 0 0 100px 0;
+}
+
+.map-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    height: 500px;
     position: relative;
 }
 
-.overview-image:before {
-    content: '';
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary), var(--accent-dark));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.map-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
-}
-
-/* ===== ALL SERVICES ===== */
-.all-services {
-    background-color: var(--light);
-}
-
-#services h2:after {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.service-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.service-card:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--accent);
-    z-index: 2;
-}
-
-.service-header {
-    padding: 40px 30px 30px;
-    position: relative;
-}
-
-.service-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(254, 202, 87, 0.1);
-    border-radius: 50%;
+    background: rgba(26, 35, 126, 0.8);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
+    text-align: center;
+    padding: 40px;
 }
 
-.service-icon i {
-    font-size: 2.5rem;
+.map-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
     color: var(--accent);
 }
 
-.service-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.service-details {
-    padding: 0 30px 30px;
-}
-
-.service-feature-list {
-    margin-top: 20px;
-}
-
-.service-feature-list li {
+.map-placeholder h3 {
+    color: white;
     margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
 }
 
-.service-feature-list i {
+.map-address {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: white;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    border-color: var(--accent);
+    box-shadow: var(--card-shadow);
+}
+
+.faq-question {
+    padding: 25px;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    color: var(--primary);
+}
+
+.faq-question i {
+    transition: var(--transition);
     color: var(--accent);
-    margin-right: 10px;
-    margin-top: 5px;
-    font-size: 0.9rem;
 }
 
-.service-footer {
-    padding: 20px 30px;
-    background-color: var(--light);
-    border-top: 1px solid rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.service-price {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.service-price span {
-    font-size: 0.9rem;
-    color: var(--text);
-    font-weight: normal;
-}
-
-.btn-service {
-    background-color: var(--primary);
-    color: white;
-    padding: 10px 25px;
-    font-size: 0.9rem;
-    border-radius: 5px;
-    text-decoration: none;
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
     transition: var(--transition);
+    border-top: 1px solid transparent;
 }
 
-.btn-service:hover {
-    background-color: var(--secondary);
+.faq-item.active .faq-answer {
+    padding: 0 25px 25px;
+    max-height: 500px;
+    border-top-color: rgba(0,0,0,0.05);
 }
 
-/* ===== OUR PROCESS ===== */
-.our-process {
-    background-color: white;
-}
-
-.process-steps {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 60px;
-    position: relative;
-}
-
-.process-steps:before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 10%;
-    width: 80%;
-    height: 2px;
-    background: var(--accent);
-    z-index: 1;
-}
-
-.process-step {
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    width: 20%;
-}
-
-.step-number {
-    width: 80px;
-    height: 80px;
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0 auto 25px;
-    position: relative;
-    border: 5px solid white;
-}
-
-.process-step h4 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-/* ===== INDUSTRIES ===== */
-.industries {
-    background-color: var(--light);
-}
-
-.industries-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.industry-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
-    border-top: 5px solid transparent;
-}
-
-.industry-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    border-top-color: var(--accent);
-}
-
-.industry-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(10, 61, 98, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-}
-
-.industry-icon i {
-    font-size: 2.5rem;
-    color: var(--primary);
-}
-
-.industry-card h4 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
 }
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: var(--gradient-primary);
     color: white;
-    text-align: center;
     padding: 100px 0;
+    text-align: center;
 }
 
 .cta-section h2 {
@@ -600,140 +805,123 @@ nav.scrolled {
 .cta-section h2:after {
     left: 50%;
     transform: translateX(-50%);
-    background: white;
+    background: var(--accent);
 }
 
-.cta-section p {
+.cta-description {
+    font-size: 1.25rem;
     color: rgba(255,255,255,0.9);
-    font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto 40px;
+    line-height: 1.8;
 }
 
-/* ===== FAQ SECTION ===== */
-.faq-section {
-    background-color: white;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 50px auto 0;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px;
-    background-color: var(--light);
-    font-weight: 600;
-    cursor: pointer;
+.cta-buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: var(--transition);
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.faq-question:hover {
-    background-color: rgba(254, 202, 87, 0.1);
+.btn-cta-primary {
+    background: var(--accent);
+    color: var(--dark);
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
 }
 
-.faq-question i {
-    transition: var(--transition);
+.btn-cta-primary:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(79, 195, 247, 0.4);
 }
 
-.faq-answer {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: var(--transition);
+.btn-cta-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.3);
 }
 
-.faq-item.active .faq-answer {
-    padding: 20px;
-    max-height: 500px;
-}
-
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
+.btn-cta-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    transform: translateY(-3px);
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: var(--dark);
+    background: var(--dark);
     color: white;
-    padding: 70px 0 30px;
+    padding: 100px 0 40px;
+    position: relative;
 }
 
-.footer-content {
+.footer-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-brand {
+    grid-column: span 1;
 }
 
 .footer-logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: white;
 }
 
-.footer-logo i {
+.footer-logo span {
     color: var(--accent);
-    margin-right: 10px;
 }
 
-.footer-about p {
-    margin-bottom: 20px;
-    opacity: 0.8;
+.company-description {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+    line-height: 1.8;
 }
 
-.social-links {
+.footer-social-links {
     display: flex;
-    gap: 15px;
+    gap: 16px;
 }
 
-.social-links a {
-    display: inline-flex;
+.footer-social-link {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255,255,255,0.1);
     color: white;
-    border-radius: 50%;
     text-decoration: none;
     transition: var(--transition);
 }
 
-.social-links a:hover {
-    background-color: var(--accent);
-    color: var(--dark);
+.footer-social-link:hover {
+    background: var(--accent);
     transform: translateY(-3px);
 }
 
-.footer-links h3, .footer-contact h3 {
-    font-size: 1.3rem;
+.footer-links h3 {
     color: white;
-    margin-bottom: 25px;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
-.footer-links h3:after, .footer-contact h3:after {
+.footer-links h3:after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 40px;
     height: 3px;
-    background-color: var(--accent);
+    background: var(--accent);
 }
 
 .footer-links ul {
@@ -741,25 +929,50 @@ footer {
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .footer-links a {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .footer-links a:hover {
     color: var(--accent);
-    padding-left: 5px;
+    padding-left: 8px;
+}
+
+.footer-links i {
+    font-size: 0.875rem;
+}
+
+.footer-contact h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-contact h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
 }
 
 .footer-contact p {
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
-    opacity: 0.8;
+    color: rgba(255,255,255,0.7);
 }
 
 .footer-contact i {
@@ -768,19 +981,61 @@ footer {
     margin-top: 5px;
 }
 
-.copyright {
-    text-align: center;
-    padding-top: 30px;
+.newsletter {
+    margin-top: 20px;
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 14px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.footer-bottom {
+    padding-top: 40px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright {
+    color: rgba(255,255,255,0.5);
     font-size: 0.95rem;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-bottom-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--accent);
 }
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -788,38 +1043,62 @@ footer {
     }
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
 /* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     h1 {
         font-size: 3rem;
     }
     
     h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     
-    .overview-content {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 992px) {
+    section {
+        padding: 80px 0;
+    }
+    
+    h1 {
+        font-size: 2.75rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    .contact-form-container {
         grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .map-container {
+        height: 400px;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px;
-    }
-    
-    .overview-image {
-        height: 300px;
-        order: -1;
-    }
-    
-    .process-steps {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .process-steps:before {
-        display: none;
-    }
-    
-    .process-step {
-        width: 45%;
-        margin-bottom: 40px;
     }
 }
 
@@ -833,53 +1112,116 @@ footer {
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: var(--primary);
+        background: white;
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
+        padding: 30px 0;
+        gap: 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: var(--transition);
     }
     
     .nav-links.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
     
     .nav-links li {
-        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
     }
     
-    .services-grid {
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .contact-grid {
         grid-template-columns: 1fr;
     }
     
-    .process-step {
-        width: 100%;
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
     
-    .service-footer {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
     }
     
-    section {
-        padding: 80px 0;
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .nav-logo {
+        height: 40px;
+    }
+    
+    nav.scrolled .nav-logo {
+        height: 32px;
     }
 }
 
 @media (max-width: 576px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
     
     h2 {
-        font-size: 2rem;
+        font-size: 1.875rem;
     }
     
     .section-subtitle {
         font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .form-side, .contact-hours, .social-contact {
+        padding: 30px 20px;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .contact-method {
+        padding: 30px 20px;
+    }
+    
+    .logo-text {
+        display: none;
+    }
+    
+    .nav-logo {
+        height: 36px;
+    }
+    
+    nav.scrolled .nav-logo {
+        height: 30px;
     }
 }
 </style>
@@ -887,28 +1229,29 @@ footer {
 
 <body>
 
-<!-- ===== NAV ===== -->
+<!-- ===== NAVBAR ===== -->
 <nav id="navbar">
     <div class="container nav-container">
-        <a href="home.html" class="logo">
-            <i class="fas fa-laptop-code"></i> WRED
+        <a href="#hero" class="logo-container">
+            <img src="logo_output.png" alt="EquinoxSphere Logo" class="nav-logo">
+            <div class="logo-text">Equinox<span>Sphere</span></div>
         </a>
         
-        <div class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
-        </div>
+        </button>
         
         <ul class="nav-links">
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- ===== SERVICES HERO ===== -->
-<section class="services-hero">
+<!-- ===== CONTACT HERO ===== -->
+<section class="contact-hero">
     <div class="hero-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
@@ -918,313 +1261,254 @@ footer {
         <div class="breadcrumb">
             <a href="home.html">Home</a>
             <span>/</span>
-            <span class="current">Our Services</span>
+            <span class="current">Contact Us</span>
         </div>
         
-        <div class="services-hero-content">
-            <h1>Our Services</h1>
-            <p>Comprehensive software solutions tailored to your business needs. From web development to AI integration, we deliver cutting-edge technology that drives growth and innovation.</p>
-            <a href="#all-services" class="btn btn-primary">Explore Our Services</a>
+        <div class="contact-hero-content">
+            <span class="section-tag">Get In Touch</span>
+            <h1>Let's Build Something Amazing Together</h1>
+            <p class="contact-hero-description">
+                Ready to transform your business with cutting-edge technology solutions? 
+                Our team of experts is here to help you navigate your digital transformation 
+                journey. Reach out today for a consultation.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact-form" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send a Message
+                </a>
+                <a href="tel:+917303490358" class="btn btn-secondary">
+                    <i class="fas fa-phone-alt"></i> Call Now
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SERVICES OVERVIEW ===== -->
-<section class="services-overview">
+<!-- ===== CONTACT INFORMATION ===== -->
+<section class="contact-info-section">
+    <div class="container text-center">
+        <span class="section-tag">Contact Information</span>
+        <h2>Connect with Our Team</h2>
+        <p class="section-subtitle">
+            Choose your preferred method to get in touch with us. Our team is ready to 
+            assist you with any questions or project inquiries.
+        </p>
+        
+        <div class="contact-grid">
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Visit Our Office</h3>
+                <div class="contact-detail">
+                    <p>9-A-23, Sector-2, Noida<br>Near Sector-16 Metro Station<br>Uttar Pradesh, India 201301</p>
+                </div>
+                <div class="contact-action">
+                    <a href="#map">Get Directions <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Call Us</h3>
+                <div class="contact-detail">
+                    <p><strong>Sales & Enquiries:</strong> +91 9351608590</p>
+                    <p><strong>Technical Support:</strong> +91 9876543210</p>
+                    <p><strong>Emergency:</strong> +91 9998887776 (24/7)</p>
+                </div>
+                <div class="contact-action">
+                    <a href="tel:+917303490358">Call Now <i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <div class="contact-detail">
+                    <p><strong>General Inquiries:</strong> info@equinoxsphere.com</p>
+                    <p><strong>Support:</strong> support@equinoxsphere.com</p>
+                    <p><strong>Careers:</strong> careers@equinoxsphere.com</p>
+                </div>
+                <div class="contact-action">
+                    <a href="mailto:info@equinoxsphere.com">Send Email <i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT FORM ===== -->
+<section id="contact-form" class="contact-form-section">
     <div class="container">
-        <div class="overview-content">
-            <div class="overview-text">
-                <h2>End-to-End Technology Solutions</h2>
-                <p>At WRED, we provide comprehensive software development services that cover every stage of the digital transformation journey. Our team of experts combines technical excellence with industry insights to deliver solutions that solve real business challenges.</p>
-                <p>We work closely with our clients to understand their unique needs and develop customized solutions that align with their business objectives and drive measurable results.</p>
-                
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>Custom Development</h3>
-                            <p>Tailored solutions designed specifically for your business requirements.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>Scalable Architecture</h3>
-                            <p>Future-proof solutions that grow with your business.</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>Ongoing Support</h3>
-                            <p>Comprehensive maintenance and support to ensure optimal performance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="overview-image">
-                <div>Comprehensive Tech Solutions</div>
-            </div>
+        <div class="text-center">
+            <span class="section-tag">Start a Conversation</span>
+            <h2>Send Us a Message</h2>
+            <p class="section-subtitle">
+                Fill out the form below and our team will get back to you within 24 hours. 
+                We're excited to learn about your project and explore how we can help.
+            </p>
         </div>
-    </div>
-</section>
-
-<!-- ===== ALL SERVICES ===== -->
-<section id="all-services" class="all-services">
-    <div class="container text-center">
-        <h2>Our Service Offerings</h2>
-        <p class="section-subtitle">We offer a wide range of software development services designed to help your business thrive in the digital age.</p>
         
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
+        <div class="contact-form-container">
+            <div class="form-side">
+                <div class="form-header">
+                    <h3>Project Inquiry Form</h3>
+                    <p class="form-note">Fields marked with <span class="required">*</span> are required.</p>
+                </div>
+                
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" class="form-control" placeholder="John" required>
+                            <div class="error-message" id="firstNameError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
+                            <div class="error-message" id="lastNameError"></div>
+                        </div>
                     </div>
-                    <h3>Custom Web Development</h3>
-                    <p>Build responsive, high-performance web applications tailored to your business needs.</p>
-                </div>
-                
-                <div class="service-details">
-                    <p>Our web development services include everything from simple business websites to complex web applications with advanced functionality.</p>
                     
-                    <ul class="service-feature-list">
-                        <li><i class="fas fa-check"></i> Responsive & Mobile-First Design</li>
-                        <li><i class="fas fa-check"></i> E-commerce Solutions</li>
-                        <li><i class="fas fa-check"></i> Content Management Systems</li>
-                        <li><i class="fas fa-check"></i> Progressive Web Apps</li>
-                        <li><i class="fas fa-check"></i> API Development & Integration</li>
-                    </ul>
-                </div>
-                
-                <div class="service-footer">
-                    <div class="service-price">Starting at <span>$5,000</span></div>
-                    <a href="contact.html" class="btn-service">Get Quote</a>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" class="form-control" placeholder="john.doe@company.com" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="+91 9351608590">
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" class="form-control" placeholder="Your Company Inc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" class="form-control">
+                            <option value="">Select a service</option>
+                            <option value="ai">AI & Machine Learning</option>
+                            <option value="web">Enterprise Web Development</option>
+                            <option value="mobile">Mobile App Development</option>
+                            <option value="cloud">Cloud & DevOps</option>
+                            <option value="data">Data Engineering</option>
+                            <option value="consulting">Digital Transformation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Project Budget</label>
+                        <select id="budget" class="form-control">
+                            <option value="">Select budget range</option>
+                            <option value="5k-15k">$5,000 - $15,000</option>
+                            <option value="15k-50k">$15,000 - $50,000</option>
+                            <option value="50k-100k">$50,000 - $100,000</option>
+                            <option value="100k+">$100,000+</option>
+                            <option value="not-sure">Not sure / Need consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details <span class="required">*</span></label>
+                        <textarea id="message" class="form-control" placeholder="Tell us about your project, timeline, goals, and any specific requirements..." required></textarea>
+                        <div class="error-message" id="messageError"></div>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </div>
+                    
+                    <div id="formStatus" class="form-status"></div>
+                </form>
             </div>
             
-            <!-- Service 2 -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>Native and cross-platform mobile applications for iOS and Android devices.</p>
-                </div>
-                
-                <div class="service-details">
-                    <p>We create intuitive, feature-rich mobile applications that provide exceptional user experiences and drive engagement.</p>
-                    
-                    <ul class="service-feature-list">
-                        <li><i class="fas fa-check"></i> iOS & Android Native Apps</li>
-                        <li><i class="fas fa-check"></i> React Native & Flutter Development</li>
-                        <li><i class="fas fa-check"></i> Mobile UI/UX Design</li>
-                        <li><i class="fas fa-check"></i> App Store Deployment</li>
-                        <li><i class="fas fa-check"></i> Ongoing Maintenance & Updates</li>
+            <div class="contact-sidebar">
+                <div class="contact-hours">
+                    <h3>Office Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">9:00 AM - 6:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 4:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </li>
+                        <li>
+                            <span class="day">Emergency Support</span>
+                            <span class="time">24/7 Available</span>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="service-footer">
-                    <div class="service-price">Starting at <span>$8,000</span></div>
-                    <a href="contact.html" class="btn-service">Get Quote</a>
-                </div>
-            </div>
-            
-            <!-- Service 3 -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
+                <div class="social-contact">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for updates, insights, and industry news.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Intelligent solutions powered by artificial intelligence and data analytics.</p>
-                </div>
-                
-                <div class="service-details">
-                    <p>Leverage the power of AI to automate processes, gain insights from data, and create intelligent applications.</p>
-                    
-                    <ul class="service-feature-list">
-                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
-                        <li><i class="fas fa-check"></i> Natural Language Processing</li>
-                        <li><i class="fas fa-check"></i> Computer Vision Solutions</li>
-                        <li><i class="fas fa-check"></i> Recommendation Systems</li>
-                        <li><i class="fas fa-check"></i> Chatbot Development</li>
-                    </ul>
-                </div>
-                
-                <div class="service-footer">
-                    <div class="service-price">Starting at <span>$12,000</span></div>
-                    <a href="contact.html" class="btn-service">Get Quote</a>
-                </div>
-            </div>
-            
-            <!-- Service 4 -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Scalable cloud infrastructure and migration services for modern businesses.</p>
-                </div>
-                
-                <div class="service-details">
-                    <p>Migrate to the cloud or optimize your existing cloud infrastructure for better performance, security, and cost-efficiency.</p>
-                    
-                    <ul class="service-feature-list">
-                        <li><i class="fas fa-check"></i> Cloud Migration</li>
-                        <li><i class="fas fa-check"></i> AWS, Azure & Google Cloud</li>
-                        <li><i class="fas fa-check"></i> DevOps & CI/CD Pipelines</li>
-                        <li><i class="fas fa-check"></i> Cloud Security & Compliance</li>
-                        <li><i class="fas fa-check"></i> Serverless Architecture</li>
-                    </ul>
-                </div>
-                
-                <div class="service-footer">
-                    <div class="service-price">Starting at <span>$6,000</span></div>
-                    <a href="contact.html" class="btn-service">Get Quote</a>
-                </div>
-            </div>
-            
-            <!-- Service 5 -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Comprehensive security solutions to protect your digital assets and data.</p>
-                </div>
-                
-                <div class="service-details">
-                    <p>Protect your business from cyber threats with our comprehensive security assessment, implementation, and monitoring services.</p>
-                    
-                    <ul class="service-feature-list">
-                        <li><i class="fas fa-check"></i> Security Audits & Assessments</li>
-                        <li><i class="fas fa-check"></i> Penetration Testing</li>
-                        <li><i class="fas fa-check"></i> Data Encryption & Protection</li>
-                        <li><i class="fas fa-check"></i> Compliance Management</li>
-                        <li><i class="fas fa-check"></i> Security Monitoring & Incident Response</li>
-                    </ul>
-                </div>
-                
-                <div class="service-footer">
-                    <div class="service-price">Starting at <span>$4,000</span></div>
-                    <a href="contact.html" class="btn-service">Get Quote</a>
-                </div>
-            </div>
-            
-            <!-- Service 6 -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Digital Transformation</h3>
-                    <p>Strategic consulting and implementation to modernize your business processes.</p>
-                </div>
-                
-                <div class="service-details">
-                    <p>Guide your organization through digital transformation with our strategic consulting and implementation services.</p>
-                    
-                    <ul class="service-feature-list">
-                        <li><i class="fas fa-check"></i> Digital Strategy Consulting</li>
-                        <li><i class="fas fa-check"></i> Process Automation</li>
-                        <li><i class="fas fa-check"></i> Legacy System Modernization</li>
-                        <li><i class="fas fa-check"></i> Technology Roadmapping</li>
-                        <li><i class="fas fa-check"></i> Change Management</li>
-                    </ul>
-                </div>
-                
-                <div class="service-footer">
-                    <div class="service-price">Contact for <span>Custom Pricing</span></div>
-                    <a href="contact.html" class="btn-service">Get Quote</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== OUR PROCESS ===== -->
-<section class="our-process">
-    <div class="container text-center">
-        <h2>Our Development Process</h2>
-        <p class="section-subtitle">We follow a structured, agile approach to ensure project success and timely delivery.</p>
-        
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h4>Discovery & Planning</h4>
-                <p>We analyze requirements, define objectives, and create a detailed project plan.</p>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h4>Design & Prototyping</h4>
-                <p>We create wireframes, mockups, and prototypes to visualize the solution.</p>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h4>Development</h4>
-                <p>Our team implements the solution using agile methodologies and best practices.</p>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h4>Testing & Quality</h4>
-                <p>We conduct rigorous testing to ensure quality, security, and performance.</p>
-            </div>
-            
-            <div class="process-step">
-                <div class="step-number">5</div>
-                <h4>Deployment & Support</h4>
-                <p>We deploy the solution and provide ongoing maintenance and support.</p>
-            </div>
+<!-- ===== MAP SECTION ===== -->
+<section id="map" class="map-section">
+    <div class="container">
+        <div class="text-center">
+            <span class="section-tag">Our Location</span>
+            <h2>Find Our Office</h2>
+            <p class="section-subtitle">
+                Visit us at our corporate headquarters in Noida, conveniently located 
+                near Sector-16 Metro Station.
+            </p>
         </div>
-    </div>
-</section>
-
-<!-- ===== INDUSTRIES ===== -->
-<section class="industries">
-    <div class="container text-center">
-        <h2>Industries We Serve</h2>
-        <p class="section-subtitle">We have extensive experience delivering technology solutions across various industries.</p>
         
-        <div class="industries-grid">
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-university"></i>
+        <div class="map-container">
+            <!-- In a real implementation, you would embed a Google Maps iframe here -->
+            <div class="map-placeholder">
+                <div class="map-overlay">
+                    <div class="map-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>EquinoxSphere Headquarters</h3>
+                    <p class="map-address">
+                        9-A-23, Sector-2, Noida<br>
+                        Near Sector-16 Metro Station<br>
+                        Uttar Pradesh, India 201301
+                    </p>
+                    <a href="https://maps.google.com/?q=9-A-23+Sector-2+Noida+India" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-directions"></i> Open in Google Maps
+                    </a>
                 </div>
-                <h4>Finance & Banking</h4>
-                <p>Secure fintech solutions, payment systems, and banking applications.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <h4>Healthcare</h4>
-                <p>HIPAA-compliant systems, telehealth platforms, and medical software.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <h4>E-commerce</h4>
-                <p>Online stores, marketplace platforms, and inventory management systems.</p>
-            </div>
-            
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h4>Education</h4>
-                <p>Learning management systems, educational apps, and e-learning platforms.</p>
             </div>
         </div>
     </div>
@@ -1233,57 +1517,84 @@ footer {
 <!-- ===== FAQ SECTION ===== -->
 <section class="faq-section">
     <div class="container text-center">
-        <h2>Frequently Asked Questions</h2>
-        <p class="section-subtitle">Find answers to common questions about our services and process.</p>
+        <span class="section-tag">Common Questions</span>
+        <h2>Contact FAQs</h2>
+        <p class="section-subtitle">
+            Find answers to frequently asked questions about contacting and working with us.
+        </p>
         
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What is your typical project timeline?</span>
+                    <span>What is your typical response time?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Project timelines vary based on complexity and scope. A simple website may take 4-6 weeks, while a complex web application could take 3-6 months. We provide detailed timelines during the discovery phase and use agile methodologies to ensure timely delivery.</p>
+                    <p>
+                        We typically respond to all inquiries within 24 hours during business days. 
+                        For urgent matters, please call our emergency support line at +91 9998887776, 
+                        which is available 24/7 for critical technical support.
+                    </p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Do you provide ongoing maintenance and support?</span>
+                    <span>Do you offer free initial consultations?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes, we offer comprehensive maintenance and support packages that include regular updates, security patches, performance monitoring, and technical support. We believe in building long-term partnerships with our clients.</p>
+                    <p>
+                        Yes, we offer a complimentary 45-minute initial consultation for all new clients. 
+                        During this session, we'll discuss your project requirements, business objectives, 
+                        and provide preliminary recommendations. This helps us understand your needs 
+                        and determine how we can best support your digital transformation.
+                    </p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>What technologies do you work with?</span>
+                    <span>What information should I include in my project inquiry?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Our team is proficient in a wide range of technologies including React, Angular, Vue.js, Node.js, Python, Java, .NET, iOS, Android, React Native, Flutter, AWS, Azure, Google Cloud, and various AI/ML frameworks. We choose the right technology stack for each project based on requirements.</p>
+                    <p>
+                        For the most accurate assessment, please include: your project goals, target audience, 
+                        preferred technologies (if any), budget range, timeline expectations, and any specific 
+                        features or requirements. The more details you provide, the better we can understand 
+                        your needs and provide relevant solutions.
+                    </p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>How do you ensure project quality?</span>
+                    <span>Do you work with international clients?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>We follow industry best practices, conduct code reviews, implement automated testing, and perform rigorous quality assurance at every stage. Our process includes unit testing, integration testing, security testing, and user acceptance testing before deployment.</p>
+                    <p>
+                        Yes, we work with clients worldwide. We have extensive experience collaborating across 
+                        different time zones and can accommodate various communication preferences. Our team is 
+                        fluent in English and we have team members who speak Spanish, French, and Mandarin to 
+                        better serve our global clientele.
+                    </p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Can you work with our existing development team?</span>
+                    <span>How do you handle project confidentiality?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Absolutely. We often collaborate with in-house teams, providing expertise in specific areas or augmenting existing teams with additional resources. We adapt our workflow to integrate seamlessly with your team and processes.</p>
+                    <p>
+                        We take confidentiality and data security very seriously. Before discussing any project 
+                        details, we're happy to sign a Non-Disclosure Agreement (NDA). All client information 
+                        and project details are kept strictly confidential, and we follow industry best practices 
+                        for data security, including encryption, secure communications, and access controls.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1293,53 +1604,90 @@ footer {
 <!-- ===== CTA SECTION ===== -->
 <section class="cta-section">
     <div class="container">
-        <h2>Ready to Start Your Project?</h2>
-        <p>Contact us today for a free consultation and let's discuss how we can help bring your ideas to life with cutting-edge technology solutions.</p>
-        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+        <h2>Ready to Start Your Digital Transformation?</h2>
+        <p class="cta-description">
+            Contact EquinoxSphere Digital Intelligence Labs today to discuss how we can help you 
+            achieve your business goals with innovative technology solutions. Let's build the future together.
+        </p>
+        <div class="cta-buttons">
+            <a href="tel:+917303490358" class="btn btn-cta-primary">
+                <i class="fas fa-phone-alt"></i> Call Now
+            </a>
+            <a href="mailto:info@equinoxsphere.com" class="btn btn-cta-secondary">
+                <i class="fas fa-envelope"></i> Email Us
+            </a>
+        </div>
     </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-about">
+        <div class="footer-container">
+            <div class="footer-brand">
                 <div class="footer-logo">
-                    <i class="fas fa-laptop-code"></i> WRED
+                    <i class="fas fa-brain"></i> Equinox<span>Sphere</span>
                 </div>
-                <p>WRED Software Solutions delivers innovative, secure, and scalable software products that help businesses thrive in the digital age.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                <p class="company-description">
+                    EquinoxSphere Digital Intelligence Labs delivers innovative, secure, 
+                    and scalable software solutions that empower businesses to thrive 
+                    in the digital age.
+                </p>
+                <div class="footer-social-links">
+                    <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="home.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> AI & ML Solutions</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Digital Transformation</a></li>
                 </ul>
             </div>
             
             <div class="footer-contact">
                 <h3>Contact Info</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Corporate Office: 9-A-23, Sector-2,
-Noida, Near Sector-16 Metro Station</p>
-                <p><i class="fas fa-phone-alt"></i> +91 7303490358</p>
-                <p><i class="fas fa-envelope"></i> info@WRED.com</p>
-                <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                <p><i class="fas fa-map-marker-alt"></i> 9-A-23, Sector-2, Noida, Near Sector-16 Metro Station</p>
+                <p><i class="fas fa-phone-alt"></i> +91 9351608590</p>
+                <p><i class="fas fa-envelope"></i> info@equinoxsphere.com</p>
+                <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+                
+                <div class="newsletter">
+                    <h4 style="color: white; margin: 20px 0 12px; font-size: 1rem;">Newsletter</h4>
+                    <input type="email" class="newsletter-input" placeholder="Your email address">
+                    <button type="button" class="btn btn-primary" style="width: 100%; padding: 12px;">Subscribe</button>
+                </div>
             </div>
         </div>
         
-        <div class="copyright">
-            <p>&copy; 2025 WRED Software Solutions. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2025 EquinoxSphere Digital Intelligence Labs Pvt. Ltd. All rights reserved.
+            </div>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
     </div>
 </footer>
@@ -1355,6 +1703,26 @@ window.addEventListener('scroll', function() {
     } else {
         navbar.classList.remove('scrolled');
     }
+    
+    // Update active nav link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 150)) {
+            current = section.getAttribute('id') || section.getAttribute('class').split(' ')[0];
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === 'contact.html' && current === 'contact-hero') {
+            link.classList.add('active');
+        }
+    });
 });
 
 // Mobile menu toggle
@@ -1365,8 +1733,10 @@ menuToggle.addEventListener('click', function() {
     navLinks.classList.toggle('active');
     if (navLinks.classList.contains('active')) {
         menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+        document.body.style.overflow = 'hidden';
     } else {
         menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = 'auto';
     }
 });
 
@@ -1375,6 +1745,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function() {
         navLinks.classList.remove('active');
         menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = 'auto';
     });
 });
 
@@ -1382,6 +1753,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', function() {
         const faqItem = this.parentElement;
+        
+        // Toggle current item
         faqItem.classList.toggle('active');
         
         // Close other FAQ items
@@ -1393,56 +1766,263 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
+// Form validation and submission
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+// Real-time form validation
+const formInputs = contactForm.querySelectorAll('.form-control');
+formInputs.forEach(input => {
+    // Real-time validation on blur
+    input.addEventListener('blur', function() {
+        validateField(this);
+    });
+    
+    // Clear error on focus
+    input.addEventListener('focus', function() {
+        clearFieldError(this);
+    });
+});
+
+function validateField(field) {
+    const fieldId = field.id;
+    const value = field.value.trim();
+    const errorElement = document.getElementById(`${fieldId}Error`);
+    
+    // Clear previous error
+    errorElement.textContent = '';
+    field.classList.remove('error', 'success');
+    
+    // Check if field is required
+    if (field.hasAttribute('required') && !value) {
+        field.classList.add('error');
+        errorElement.textContent = 'This field is required';
+        errorElement.style.display = 'block';
+        return false;
+    }
+    
+    // Email validation
+    if (field.type === 'email' && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            field.classList.add('error');
+            errorElement.textContent = 'Please enter a valid email address';
+            errorElement.style.display = 'block';
+            return false;
+        }
+    }
+    
+    // Phone validation
+    if (field.id === 'phone' && value) {
+        const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+        if (!phoneRegex.test(value)) {
+            field.classList.add('error');
+            errorElement.textContent = 'Please enter a valid phone number';
+            errorElement.style.display = 'block';
+            return false;
+        }
+    }
+    
+    // Message length validation
+    if (field.id === 'message' && value.length < 10) {
+        field.classList.add('error');
+        errorElement.textContent = 'Message must be at least 10 characters';
+        errorElement.style.display = 'block';
+        return false;
+    }
+    
+    // If validation passed
+    if (value) {
+        field.classList.add('success');
+    }
+    
+    return true;
+}
+
+function clearFieldError(field) {
+    const fieldId = field.id;
+    const errorElement = document.getElementById(`${fieldId}Error`);
+    errorElement.textContent = '';
+    errorElement.style.display = 'none';
+    field.classList.remove('error');
+}
+
+// Form submission
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validate all fields
+    let isValid = true;
+    const requiredFields = contactForm.querySelectorAll('.form-control[required]');
+    
+    requiredFields.forEach(field => {
+        if (!validateField(field)) {
+            isValid = false;
+        }
+    });
+    
+    if (!isValid) {
+        formStatus.textContent = 'Please fix the errors in the form before submitting.';
+        formStatus.className = 'form-status error';
+        formStatus.style.display = 'block';
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    // Simulate form submission (in real implementation, this would be an AJAX call)
+    setTimeout(() => {
+        // Get form data
+        const firstName = document.getElementById('firstName').value;
+        const email = document.getElementById('email').value;
+        const service = document.getElementById('service').value;
+        
+        // Show success message
+        formStatus.innerHTML = `
+            <div style="text-align: center;">
+                <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 15px; color: var(--success);"></i>
+                <h4 style="margin-bottom: 10px;">Thank You, ${firstName}!</h4>
+                <p>Your message has been sent successfully. Our team will contact you at <strong>${email}</strong> within 24 hours.</p>
+                <p style="margin-top: 15px; font-size: 0.9rem;">
+                    ${service ? `Regarding: ${document.getElementById('service').options[document.getElementById('service').selectedIndex].text}` : ''}
+                </p>
+            </div>
+        `;
+        formStatus.className = 'form-status success';
+        formStatus.style.display = 'block';
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Clear all success classes
+        formInputs.forEach(input => {
+            input.classList.remove('success');
+        });
+        
+        // Reset button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Scroll to success message
+        formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        
+        // Hide success message after 15 seconds
+        setTimeout(() => {
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+            formStatus.style.display = 'none';
+        }, 15000);
+    }, 2000);
+});
+
+// Phone number formatting
+const phoneInput = document.getElementById('phone');
+phoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    // Format for Indian numbers
+    if (value.length > 0) {
+        if (!value.startsWith('91')) {
+            value = '91' + value;
+        }
+        
+        if (value.length > 2) {
+            value = '+91 ' + value.slice(2);
+        }
+        
+        if (value.length > 7) {
+            value = value.slice(0, 7) + ' ' + value.slice(7);
+        }
+        
+        if (value.length > 12) {
+            value = value.slice(0, 12) + ' ' + value.slice(12, 17);
+        }
+    }
+    
+    e.target.value = value;
+});
+
 // Animate elements on scroll
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animated');
         }
     });
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.service-card, .industry-card, .process-step').forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+document.querySelectorAll('.contact-method, .faq-item, .social-contact, .contact-hours').forEach(element => {
     observer.observe(element);
 });
 
-// Process steps animation
-const processSteps = document.querySelectorAll('.process-step');
-const processObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            processSteps.forEach((step, index) => {
-                setTimeout(() => {
-                    step.style.opacity = '1';
-                    step.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-        }
-    });
-}, { threshold: 0.3 });
-
-processObserver.observe(document.querySelector('.our-process'));
-
-// Service card hover enhancement
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.zIndex = '10';
+// Initialize animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Add staggered animation to contact methods
+    const contactMethods = document.querySelectorAll('.contact-method');
+    contactMethods.forEach((method, index) => {
+        method.style.opacity = '0';
+        method.style.transform = 'translateY(30px)';
+        method.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        method.style.transitionDelay = (index * 0.1) + 's';
     });
     
-    card.addEventListener('mouseleave', function() {
-        this.style.zIndex = '1';
-    });
+    // Trigger animations on load for visible elements
+    setTimeout(() => {
+        contactMethods.forEach(method => {
+            if (method.getBoundingClientRect().top < window.innerHeight - 100) {
+                method.style.opacity = '1';
+                method.style.transform = 'translateY(0)';
+            }
+        });
+    }, 300);
 });
+
+// Newsletter subscription
+const newsletterBtn = document.querySelector('.newsletter .btn');
+if (newsletterBtn) {
+    newsletterBtn.addEventListener('click', function() {
+        const newsletterInput = document.querySelector('.newsletter-input');
+        const email = newsletterInput.value.trim();
+        
+        if (!email) {
+            alert('Please enter your email address');
+            return;
+        }
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+        
+        // Show loading state
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+        this.disabled = true;
+        
+        // Simulate subscription
+        setTimeout(() => {
+            this.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+            newsletterInput.value = '';
+            
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.disabled = false;
+            }, 2000);
+        }, 1500);
+    });
+}
 </script>
 
 </body>

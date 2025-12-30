@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us - WRED Software Solutions</title>
+<title>Contact Us - EquinoxSphere Digital Intelligence Labs Private Limited Software Solutions</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 /* ===== CSS Variables ===== */
@@ -141,18 +141,37 @@ nav.scrolled {
     align-items: center;
 }
 
-.logo {
+.logo-container {
     display: flex;
     align-items: center;
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 700;
     text-decoration: none;
+    transition: var(--transition);
 }
 
-.logo i {
+.logo-container:hover {
+    transform: scale(1.02);
+}
+
+.nav-logo {
+    height: 50px;
+    width: auto;
+    transition: var(--transition);
+}
+
+nav.scrolled .nav-logo {
+    height: 40px;
+}
+
+.logo-text {
+    margin-left: 12px;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-text span {
     color: var(--accent);
-    margin-right: 10px;
 }
 
 .nav-links {
@@ -836,6 +855,18 @@ footer {
     section {
         padding: 80px 0;
     }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .nav-logo {
+        height: 40px;
+    }
+    
+    nav.scrolled .nav-logo {
+        height: 32px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -858,6 +889,18 @@ footer {
     .map-container {
         height: 300px;
     }
+    
+    .logo-text {
+        display: none;
+    }
+    
+    .nav-logo {
+        height: 36px;
+    }
+    
+    nav.scrolled .nav-logo {
+        height: 30px;
+    }
 }
 </style>
 </head>
@@ -867,8 +910,9 @@ footer {
 <!-- ===== NAV ===== -->
 <nav id="navbar">
     <div class="container nav-container">
-        <a href="home.html" class="logo">
-            <i class="fas fa-laptop-code"></i> WRED
+        <a href="#hero" class="logo-container">
+            <img src="logo_output.png" alt="EquinoxSphere Logo" class="nav-logo">
+            <div class="logo-text">Equinox<span>Sphere</span></div>
         </a>
         
         <div class="menu-toggle" id="menuToggle">
@@ -919,7 +963,7 @@ footer {
                 </div>
                 <h3>Visit Our Office</h3>
                 <div class="contact-detail">
-                    <p>123 Innovation Drive<br>Tech Park, San Francisco<br>CA 94107, USA</p>
+                    <p> K P H B Phase 9, Hafeezpet<br>Hyderabad, Telangana 500085</p>
                 </div>
                 <div class="contact-action">
                     <a href="#map">Get Directions <i class="fas fa-arrow-right"></i></a>
@@ -932,11 +976,11 @@ footer {
                 </div>
                 <h3>Call Us</h3>
                 <div class="contact-detail">
-                    <p><strong>Sales:</strong> +91 7303490358</p>
-                    <p><strong>Support:</strong> +1 (555) 987-6543</p>
+                    <p><strong>Sales:</strong> +91 9351608590</p>
+                    <p><strong>Support:</strong> +91 9876543210</p>
                 </div>
                 <div class="contact-action">
-                    <a href="tel:+15551234567">Call Now <i class="fas fa-phone"></i></a>
+                    <a href="tel:+917303490358">Call Now <i class="fas fa-phone"></i></a>
                 </div>
             </div>
             
@@ -946,12 +990,12 @@ footer {
                 </div>
                 <h3>Email Us</h3>
                 <div class="contact-detail">
-                    <p><strong>General:</strong> info@WRED.com</p>
-                    <p><strong>Support:</strong> support@WRED.com</p>
-                    <p><strong>Careers:</strong> careers@WRED.com</p>
+                    <p><strong>General:</strong> info@equinoxsphere.com</p>
+                    <p><strong>Support:</strong> support@equinoxsphere.com</p>
+                    <p><strong>Careers:</strong> careers@equinoxsphere.com</p>
                 </div>
                 <div class="contact-action">
-                    <a href="mailto:info@WRED.com">Send Email <i class="fas fa-envelope"></i></a>
+                    <a href="mailto:info@equinoxsphere.com">Send Email <i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -994,7 +1038,7 @@ footer {
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control" placeholder="+91 7303490358">
+                        <input type="tel" id="phone" class="form-control" placeholder="+91 9351608590">
                     </div>
                     
                     <div class="form-group">
@@ -1083,7 +1127,7 @@ footer {
 <section id="map" class="map-section">
     <div class="container">
         <h2 class="text-center">Find Our Office</h2>
-        <p class="section-subtitle text-center">Visit us at our headquarters in San Francisco's Tech Park.</p>
+        <p class="section-subtitle text-center">Visit us at our headquarters in Noida, India.</p>
         
         <div class="map-container">
             <!-- In a real implementation, you would embed a Google Maps iframe here -->
@@ -1091,10 +1135,9 @@ footer {
             <div class="map-placeholder">
                 <i class="fas fa-map-marked-alt"></i>
                 <h3>Our Location</h3>
-                <p>Corporate Office: 9-A-23, Sector-2,
-Noida, Near Sector-16 Metro Station</p>
+                <p> K P H B Phase 9, Hafeezpet, Hyderabad, Telangana 500085</p>
                 <p style="margin-top: 20px; font-size: 0.9rem;">[Google Maps integration would appear here in a live website]</p>
-                <a href="https://maps.google.com/?q=123+Innovation+Drive+San+Francisco+CA" target="_blank" class="btn btn-primary" style="margin-top: 20px;">Open in Google Maps</a>
+                <a href="https://maps.google.com/?q=9-A-23+Sector-2+Noida+India" target="_blank" class="btn btn-primary" style="margin-top: 20px;">Open in Google Maps</a>
             </div>
         </div>
     </div>
@@ -1113,7 +1156,7 @@ Noida, Near Sector-16 Metro Station</p>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call our support line at +1 (555) 987-6543, which is available 24/7 for emergency technical support.</p>
+                    <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call our support line at +91 9876543210, which is available 24/7 for emergency technical support.</p>
                 </div>
             </div>
             
@@ -1143,7 +1186,7 @@ Noida, Near Sector-16 Metro Station</p>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes, we work with clients worldwide. We have experience collaborating across different time zones and can accommodate various communication preferences. Our team is fluent in English and we have team members who speak Spanish, French, and Mandarin.</p>
+                    <p>Yes, we work with clients worldwide. We have experience collaborating across different time zones and can accommodate various communication preferences. Our team is fluent in English and we have team members who speak Hindi and other regional languages.</p>
                 </div>
             </div>
             
@@ -1164,10 +1207,10 @@ Noida, Near Sector-16 Metro Station</p>
 <section class="cta-section">
     <div class="container">
         <h2>Ready to Start Your Digital Transformation?</h2>
-        <p>Contact us today to discuss how WRED can help you achieve your business goals with innovative technology solutions.</p>
+        <p>Contact us today to discuss how EquinoxSphere can help you achieve your business goals with innovative technology solutions.</p>
         <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="tel:+15551234567" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
-            <a href="mailto:info@WRED.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Email Us</a>
+            <a href="tel:+917303490358" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="mailto:info@equinoxsphere.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Email Us</a>
         </div>
     </div>
 </section>
@@ -1178,14 +1221,13 @@ Noida, Near Sector-16 Metro Station</p>
         <div class="footer-content">
             <div class="footer-about">
                 <div class="footer-logo">
-                    <i class="fas fa-laptop-code"></i> WRED
+                    <i class="fas fa-laptop-code"></i> EquinoxSphere
                 </div>
-                <p>WRED Software Solutions delivers innovative, secure, and scalable software products that help businesses thrive in the digital age.</p>
+                <p>EquinoxSphere Digital Intelligence Labs delivers innovative, secure, and scalable software solutions that help businesses thrive in the digital age.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
@@ -1204,16 +1246,15 @@ Noida, Near Sector-16 Metro Station</p>
             
             <div class="footer-contact">
                 <h3>Contact Info</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Corporate Office: 9-A-23, Sector-2,
-Noida, Near Sector-16 Metro Station</p>
-                <p><i class="fas fa-phone-alt"></i> +91 7303490358</p>
-                <p><i class="fas fa-envelope"></i> info@WRED.com</p>
+                <p><i class="fas fa-map-marker-alt"></i>  K P H B Phase 9, Hafeezpet, Hyderabad, Telangana 500085</p>
+                <p><i class="fas fa-phone-alt"></i> +91 9351608590</p>
+                <p><i class="fas fa-envelope"></i> info@equinoxsphere.com</p>
                 <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
             </div>
         </div>
         
         <div class="copyright">
-            <p>&copy; 2025 WRED Software Solutions. All Rights Reserved. | <a href="#" style="color: var(--accent); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: var(--accent); text-decoration: none;">Terms of Service</a></p>
+            <p>&copy; 2025 EquinoxSphere Digital Intelligence Labs Pvt. Ltd. All Rights Reserved. | <a href="#" style="color: var(--accent); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: var(--accent); text-decoration: none;">Terms of Service</a></p>
         </div>
     </div>
 </footer>
@@ -1372,13 +1413,13 @@ function clearErrors() {
 // Live chat button
 document.getElementById('liveChatBtn').addEventListener('click', function(e) {
     e.preventDefault();
-    alert('Live chat feature would open here. In a real implementation, this would connect to a live chat service like Intercom, Drift, or a custom solution.');
+    alert('Live chat feature would open here. In a real implementation, this would connect to a live chat service like Intercom, Drift, or a solution.');
 });
 
 // Schedule button
 document.getElementById('scheduleBtn').addEventListener('click', function(e) {
     e.preventDefault();
-    alert('Scheduling feature would open here. In a real implementation, this would connect to a scheduling service like Calendly, Acuity, or a custom booking system.');
+    alert('Scheduling feature would open here. In a real implementation, this would connect to a scheduling service like Calendly, Acuity, or a booking system.');
 });
 
 // Phone number formatting
@@ -1387,14 +1428,14 @@ phoneInput.addEventListener('input', function(e) {
     let value = e.target.value.replace(/\D/g, '');
     
     if (value.length > 0) {
-        value = '+1 (' + value;
+        value = '+91 ' + value;
         
-        if (value.length > 7) {
-            value = value.slice(0, 7) + ') ' + value.slice(7);
+        if (value.length > 6) {
+            value = value.slice(0, 6) + ' ' + value.slice(6, 10);
         }
         
-        if (value.length > 12) {
-            value = value.slice(0, 12) + '-' + value.slice(12, 16);
+        if (value.length > 11) {
+            value = value.slice(0, 11) + ' ' + value.slice(11, 15);
         }
     }
     
