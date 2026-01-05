@@ -356,6 +356,34 @@ nav.scrolled .nav-logo {
     right: 20%;
 }
 
+/* ===== IMAGE PLACEHOLDERS ===== */
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary), var(--accent-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.team-placeholder {
+    background: linear-gradient(45deg, var(--secondary), var(--accent-dark));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.team-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
 /* ===== OUR STORY ===== */
 .our-story {
     background-color: white;
@@ -601,25 +629,20 @@ nav.scrolled .nav-logo {
 
 .member-image {
     height: 300px;
-    background-color: var(--light);
     position: relative;
     overflow: hidden;
 }
 
-.member-1 {
-    background: linear-gradient(45deg, #1a237e, #283593);
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
 }
 
-.member-2 {
-    background: linear-gradient(45deg, #283593, #3949ab);
-}
-
-.member-3 {
-    background: linear-gradient(45deg, #3949ab, #5c6bc0);
-}
-
-.member-4 {
-    background: linear-gradient(45deg, #5c6bc0, #7986cb);
+.team-member:hover .member-image img {
+    transform: scale(1.05);
 }
 
 .member-image-content {
@@ -1071,7 +1094,6 @@ footer {
 <nav id="navbar">
     <div class="container nav-container">
         <a href="#hero" class="logo-container">
-            <img src="logo_output.png" alt="EquinoxSphere Logo" class="nav-logo">
             <div class="logo-text">Equinox<span>Sphere</span></div>
         </a>
         
@@ -1329,7 +1351,11 @@ footer {
         
         <div class="team-grid">
             <div class="team-member">
-                <div class="member-image member-1">
+                <div class="member-image">
+                    <div class="placeholder-img team-placeholder">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Banoth Siddhart</span>
+                    </div>
                     <div class="member-image-content">
                         <h4>Banoth Siddhart</h4>
                         <div class="member-role">CEO & Founder</div>
@@ -1352,10 +1378,14 @@ footer {
             </div>
             
             <div class="team-member">
-                <div class="member-image member-2">
+                <div class="member-image">
+                    <div class="placeholder-img team-placeholder">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Vinit Sharma</span>
+                    </div>
                     <div class="member-image-content">
                         <h4>Vinit Sharma</h4>
-                        <div class="member-role">CTO/COO</div>
+                        <div class="member-role">CTO</div>
                     </div>
                 </div>
                 <div class="member-info">
@@ -1375,7 +1405,11 @@ footer {
             </div>
             
             <div class="team-member">
-                <div class="member-image member-3">
+                <div class="member-image">
+                    <div class="placeholder-img team-placeholder">
+                        <i class="fas fa-user-tie"></i>
+                        <span>M. Siddhart Naidu</span>
+                    </div>
                     <div class="member-image-content">
                         <h4>M.Siddhart Naidu</h4>
                         <div class="member-role">MD</div>
@@ -1398,7 +1432,11 @@ footer {
             </div>
             
             <div class="team-member">
-                <div class="member-image member-4">
+                <div class="member-image">
+                    <div class="placeholder-img team-placeholder">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Uppu Harsha</span>
+                    </div>
                     <div class="member-image-content">
                         <h4>Uppu Harsha</h4>
                         <div class="member-role">CMO</div>
