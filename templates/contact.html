@@ -911,19 +911,24 @@ footer {
 <nav id="navbar">
     <div class="container nav-container">
         <a href="#hero" class="logo-container">
-            <img src="logo_output.png" alt="EquinoxSphere Logo" class="nav-logo">
-            <div class="logo-text">Equinox<span>Sphere</span></div>
-        </a>
+    <img 
+        src="{{ url_for('static', filename='images/logo_output.png') }}" 
+        alt="EquinoxSphere Logo" 
+        class="nav-logo">
+    <div class="logo-text">Equinox<span>Sphere</span></div>
+</a>
+
         
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
         
         <ul class="nav-links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+           <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+<li><a href="{{ url_for('services') }}">Services</a></li>
+<li><a href="{{ url_for('contact') }}">Contact</a></li>
+
         </ul>
     </div>
 </nav>
